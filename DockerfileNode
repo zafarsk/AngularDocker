@@ -1,0 +1,11 @@
+FROM node:alpine
+
+WORKDIR /usr/zafar/angularapp
+
+COPY package.json .
+
+RUN npm install
+
+COPY . .
+
+CMD ["npm","run","start"]
