@@ -20,6 +20,15 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 ## Running end-to-end tests
 
+## changes need to be made if you are hosting in docker
+change httpd.conf
+find "LoadModule rewrite_module modules/mod_rewrite.so" remove # from front
+find servername then remove #, then add localhost:80
+
+#if you dont have httpd.conf then please download from below
+docker run --rm httpd:2.4 cat /usr/local/apache2/conf/httpd.conf > my-httpd.conf
+
+
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
 ## Further help
